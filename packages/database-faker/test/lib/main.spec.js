@@ -54,7 +54,7 @@ describe('#persons', () => {
         assert.isString(person.email, 'email');
 
         // optional avatar
-        if (!person.avatar) {
+        if (!person.avatarX) {
           assert.isUndefined(person.avatar, 'avatar');
         }
         else {
