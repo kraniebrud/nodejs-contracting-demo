@@ -1,0 +1,8 @@
+{
+  "include": [
+    "test/**/*.spec.js"
+  ],
+  "compilerOptions": {
+    "checkJs": true,
+  }
+}

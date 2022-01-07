@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-contracting-demo-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "16"
+  },
+  "scripts": {
+    "isCompatibleNode": "node ./isCompatibleNodeVersion",
+    "preinstall": "node ./isCompatibleNodeVersion",
+    "test": "npm run isCompatibleNode && npm test --workspaces --if-present",
+    "build": "npm run isCompatibleNode && npm run build --workspaces --if-present",
+    "start:api": "npm start --workspace=@ncd/express-person-api",
+    "start:fe": "npm start --workspace=@ncd/frontend-api-sdk",
+    "start": "npm run isCompatibleNode && concurrently -n API,FE \"npm:start:api\" \"npm:start:fe\""
+  },
+  "workspaces": [
+    "./packages/*"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.3.0"
+  }
+}

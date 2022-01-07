@@ -1,0 +1,23 @@
+{
+  "name": "@ncd/frontend-api-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "oas2api": "node ./oas2api.js",
+    "build:html": "cp -r ./src/html ./dist",
+    "build:js": "tsc -p tsconfig.json",
+    "build": "npm run clean && npm run oas2api && npm run build:js && npm run build:html",
+    "server": "node ./server.js",
+    "test": "npm run oas2api && tsc -p tsconfig.json --noEmit",
+    "start": "npm run oas2api && npm run build && npm run server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "swagger-typescript-api": "^9.2.0",
+    "typescript": "^4.4.3"
+  }
+}

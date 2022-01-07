@@ -1,0 +1,10 @@
+node_modules
+./packages/*/node_modules
+
+.DS_STORE
+**/.DS_STORE
+
+packages/*/dist
+packages/*/**/.oas
+
+npm-debug.log

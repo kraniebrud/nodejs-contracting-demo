@@ -1,0 +1,31 @@
+{
+  "name": "@ncd/express-person-api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "scripts": {
+    "oas2types": "node ./oas2types",
+    "typecheck": "npm run oas2types && tsc -p tsconfig.json --noEmit",
+    "build": "npm run oas2types && tsc -p tsconfig.json",
+    "test": "npm run typecheck && TS_NODE_PROJECT='./tsconfig.json' mocha --require ts-node/register ./test/**/*.spec.ts --recursive --exit",
+    "start": "npm run build && node ./dist/start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-openapi-validator": "^4.13.1",
+    "http-errors": "^1.8.0"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.16.0",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.1.2",
+    "openapi-typescript": "^4.4.0",
+    "ts-node": "10.4.0",
+    "typescript": "^4.4.3"
+  }
+}

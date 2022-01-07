@@ -1,0 +1,21 @@
+{
+  "name": "@ncd/database-faker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "typecheck": "tsc -p jsconfig.json --noEmit",
+    "test": "npm run typecheck && mocha ./test/**/*.spec.js --recursive --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.5.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "typescript": "^4.4.3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@ncd/openapi-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {
+    "prepare": "node ./scripts/prepare"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
