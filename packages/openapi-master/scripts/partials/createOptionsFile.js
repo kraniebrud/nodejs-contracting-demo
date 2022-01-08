@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 const { OPTIONS_FILE_JS } = require('../../opts/locactions');
 
