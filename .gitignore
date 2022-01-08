@@ -7,4 +7,6 @@ node_modules
 packages/*/dist
 packages/*/**/.oas
 
+packages/openapi-master/.options.js
+
 npm-debug.log

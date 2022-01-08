@@ -1,12 +1,14 @@
 const https = require('https');
 
+const { OPTIONS_FILE_JS } = require('../../opts/locactions');
+
 const fallback = {
   URL: 'https://stoplight.io/api/v1/projects/kranie/persons/nodes/persons-spec.json',
 };
 
 const getOptions = () => {
   try {
-    const { URL } = require('../../.options.js');
+    const { URL } = require(OPTIONS_FILE_JS);
     return {
       URL,
     };
