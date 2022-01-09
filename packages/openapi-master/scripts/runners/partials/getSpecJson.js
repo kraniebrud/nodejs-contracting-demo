@@ -1,21 +1,13 @@
 const https = require('https');
 
-const { OPTIONS_FILE_JS } = require('../../opts/locactions');
+const { OPTIONS_FILE_JS } = require('../../../opts/locations');
+const defaultOptions = require('../../../opts/defaults/options');
 
-const fallback = {
-  URL: 'https://stoplight.io/api/v1/projects/kranie/persons/nodes/persons-spec.json',
-};
-
-const getOptions = () => {
+const getOptionsURL = () => {
   try {
-    const { URL } = require(OPTIONS_FILE_JS);
-    return {
-      URL,
-    };
+    return require(OPTIONS_FILE_JS).URL;
   } catch {
-    return {
-      ...fallback,
-    };
+    return defaultOptions.URL
   };
 };
 
@@ -24,8 +16,8 @@ const getOptions = () => {
  * @returns {Promise<Buffer>} openapi specifications data
  */
 const getSpecJson = () => new Promise((resolve, reject) => {
-  const { URL } = getOptions();
-  https.get(URL, (res) => {
+  const specJsonURL = getOptionsURL();
+  https.get(specJsonURL, (res) => {
     const { statusCode } = res
 
     if(statusCode >= 400){

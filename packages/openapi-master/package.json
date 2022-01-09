@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "lib/main.js",
+  "type": "commonjs",
   "scripts": {
-    "prepare": "node ./scripts/prepare"
+    "prepare": "node ./scripts/bin.prepare",
+    "test": "mocha ./test --file ./test/setup.js"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "nock": "^13.2.1",
+    "sinon": "^12.0.1"
+  }
 }

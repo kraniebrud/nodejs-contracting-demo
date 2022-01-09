@@ -1,4 +1,4 @@
-const { OAS_FILE_JSON } = require('../opts/locactions');
+const { OAS_FILE_JSON } = require('../opts/locations');
 
 module.exports = {
   get specJson() {

@@ -1,6 +1,7 @@
 const fs = require('fs');
 
-const { OPTIONS_FILE_JS } = require('../../opts/locactions');
+const { OPTIONS_FILE_JS } = require('../../../opts/locations');
+const defaultOptions = require('../../../opts/defaults/options');
 
 /**
  * @returns {boolean}
@@ -15,9 +16,9 @@ const hasExistingOptionsFile = () => {
   }
 }
 
-const defaultOptions = `module.exports = {
-  // the url to retrieve specifactions from, fx https://stoplight.io/api/v1/projects/kranie/persons/nodes/persons-spec.json
-  URL: 'https://stoplight.io/api/v1/projects/kranie/persons/nodes/persons-spec.json'
+const optionsJs = `module.exports = {
+  // the url to retrieve specifactions from, fx '${defaultOptions.URL}'
+  URL: '${defaultOptions.URL}'
 };`;
 
 /**
@@ -26,7 +27,7 @@ const defaultOptions = `module.exports = {
  */
 const createOptionsFile = () => new Promise((resolve) => {
   if (hasExistingOptionsFile() === false) {
-    fs.writeFileSync(OPTIONS_FILE_JS, defaultOptions);
+    fs.writeFileSync(OPTIONS_FILE_JS, optionsJs);
   }
   resolve(OPTIONS_FILE_JS);
 });
