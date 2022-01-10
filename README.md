@@ -1,1 +1,1 @@
-# nodejs-contracting-demo-ts
+# nodejs-contracting-demo
