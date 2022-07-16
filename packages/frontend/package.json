@@ -4,6 +4,7 @@
   "description": "",
   "type": "commonjs",
   "scripts": {
+    "postinstall": "npm run oas2api",
     "clean": "rm -rf ./dist",
     "oas2api": "node ./oas2api.js",
     "build:html": "cp -r ./src/html ./dist",

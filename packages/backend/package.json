@@ -4,6 +4,7 @@
   "description": "",
   "type": "commonjs",
   "scripts": {
+    "postinstall": "npm run oas2types",
     "oas2types": "node ./oas2types",
     "typecheck": "npm run oas2types && tsc -p tsconfig.json --noEmit",
     "build": "npm run oas2types && tsc -p tsconfig.json",

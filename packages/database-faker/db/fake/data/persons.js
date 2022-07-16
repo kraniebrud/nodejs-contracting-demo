@@ -1,5 +1,9 @@
 const faker = require('faker');
 
+const getFakeAvatarUrl = (personId) => {
+  return `https://robohash.org/${personId}`;
+}
+
 const maybeUndefined = (input) => {
   const asUndefined = Math.round(Math.random() * 1) === 1;
   if (asUndefined) {
@@ -23,7 +27,7 @@ do {
   }
 
   // lets mix it up, with and w/o optional - avatar, address
-  const avatar = maybeUndefined(faker.image.avatar);
+  const avatar = maybeUndefined(getFakeAvatarUrl(personId));
   const address = maybeUndefined({
     streetAddress: faker.address.streetAddress(),
     zipCode: faker.address.zipCode(),
