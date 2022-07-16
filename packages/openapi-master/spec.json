@@ -1,0 +1,375 @@
+{
+    "openapi": "3.0.0",
+    "x-stoplight": {
+        "id": "strb6v1jrmjrf"
+    },
+    "info": {
+        "version": "1.0.0",
+        "title": "person api",
+        "description": "express person api contracting demo.",
+        "license": {
+            "name": "MIT",
+            "url": "https://en.wikipedia.org/wiki/Lorem_ipsum"
+        },
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.example.com/support",
+            "email": "support@example.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "tags": [
+        {
+            "name": "persons",
+            "description": "actions for the persons operatons"
+        }
+    ],
+    "paths": {
+        "/persons": {
+            "get": {
+                "operationId": "getPersons",
+                "description": "gets all persons",
+                "tags": [
+                    "persons"
+                ],
+                "summary": "getPersons",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Person"
+                                    }
+                                },
+                                "examples": {
+                                    "example-1": {
+                                        "value": [
+                                            {
+                                                "personId": 7,
+                                                "firstName": "Glenna",
+                                                "lastName": "Stiedemann",
+                                                "email": "GlennaStiedemann@mailit.net",
+                                                "avatar": "https://cdn.fakercloud.com/avatars/mhesslow_128.jpg"
+                                            },
+                                            {
+                                                "personId": 6,
+                                                "firstName": "Grover",
+                                                "lastName": "Bode",
+                                                "email": "GroverBode@mailit.net"
+                                            },
+                                            {
+                                                "personId": 5,
+                                                "firstName": "Rhoda",
+                                                "lastName": "Bernhard",
+                                                "email": "RhodaBernhard@mailit.net",
+                                                "avatar": "https://cdn.fakercloud.com/avatars/richwild_128.jpg"
+                                            },
+                                            {
+                                                "personId": 4,
+                                                "firstName": "Ricky",
+                                                "lastName": "McGlynn",
+                                                "email": "RickyMcGlynn@mailit.net",
+                                                "avatar": "https://cdn.fakercloud.com/avatars/krystalfister_128.jpg",
+                                                "address": {
+                                                    "streetAddress": "7510 Hills Neck",
+                                                    "zipCode": "36827",
+                                                    "city": "South Adrianahaven",
+                                                    "country": "United Kingdom"
+                                                }
+                                            },
+                                            {
+                                                "personId": 3,
+                                                "firstName": "Jonas",
+                                                "lastName": "Rosenbaum",
+                                                "email": "JonasRosenbaum@mailit.net",
+                                                "avatar": "https://cdn.fakercloud.com/avatars/dgajjar_128.jpg",
+                                                "address": {
+                                                    "streetAddress": "4924 Rutherford Walk",
+                                                    "zipCode": "91167-3905",
+                                                    "city": "Evansville",
+                                                    "country": "Guam"
+                                                }
+                                            },
+                                            {
+                                                "personId": 2,
+                                                "firstName": "Elinor",
+                                                "lastName": "Blick",
+                                                "email": "ElinorBlick@mailit.net",
+                                                "avatar": "https://cdn.fakercloud.com/avatars/nathalie_fs_128.jpg"
+                                            },
+                                            {
+                                                "personId": 1,
+                                                "firstName": "Viva",
+                                                "lastName": "Klein",
+                                                "email": "VivaKlein@mailit.net",
+                                                "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
+                                                "address": {
+                                                    "streetAddress": "98604 Hermann Expressway",
+                                                    "zipCode": "86521-6451",
+                                                    "city": "South Madalynfort",
+                                                    "country": "Barbados"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "operationId": "createPerson",
+                "description": "creates a new person",
+                "tags": [
+                    "persons"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string",
+                                        "example": "Ricky",
+                                        "minLength": 2
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "example": "McGlynn",
+                                        "minLength": 2
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "RickyMcGlynn@mailit.net",
+                                        "format": "email"
+                                    },
+                                    "avatar": {
+                                        "type": "string",
+                                        "example": "https://cdn.fakercloud.com/avatars/rickymcglynn_128.jpg",
+                                        "format": "uri"
+                                    },
+                                    "address": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "streetAddress": {
+                                                "type": "string",
+                                                "example": "7510 Hills Neck",
+                                                "minLength": 4
+                                            },
+                                            "zipCode": {
+                                                "type": "string",
+                                                "minLength": 4,
+                                                "example": "36827"
+                                            },
+                                            "city": {
+                                                "type": "string",
+                                                "example": "South Adrianahaven",
+                                                "minLength": 4
+                                            },
+                                            "country": {
+                                                "type": "string",
+                                                "example": "United Kingdom",
+                                                "minLength": 4
+                                            }
+                                        },
+                                        "required": [
+                                            "streetAddress",
+                                            "zipCode",
+                                            "city",
+                                            "country"
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "firstName",
+                                    "lastName",
+                                    "email"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "summary": "createPerson",
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "personId": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "personId"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/persons/{personId}": {
+            "get": {
+                "operationId": "getPersonById",
+                "description": "gets a single person by its `persondId`",
+                "tags": [
+                    "persons"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "personId",
+                        "required": true,
+                        "description": "id of the person to retrieve",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Person"
+                                },
+                                "examples": {
+                                    "example-1": {
+                                        "value": {
+                                            "personId": 1,
+                                            "firstName": "Viva",
+                                            "lastName": "Klein",
+                                            "email": "VivaKlein@mailit.net",
+                                            "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
+                                            "address": {
+                                                "streetAddress": "98604 Hermann Expressway",
+                                                "zipCode": "86521-6451",
+                                                "city": "South Madalynfort",
+                                                "country": "Barbados"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "summary": "getPersonById"
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Person": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "personId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "minLength": 2
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "minLength": 2
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "avatar": {
+                        "type": "string",
+                        "format": "uri"
+                    },
+                    "address": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "streetAddress": {
+                                "type": "string",
+                                "minLength": 4
+                            },
+                            "zipCode": {
+                                "type": "string",
+                                "minLength": 4
+                            },
+                            "city": {
+                                "type": "string",
+                                "minLength": 4
+                            },
+                            "country": {
+                                "type": "string",
+                                "minLength": 4
+                            }
+                        },
+                        "required": [
+                            "streetAddress",
+                            "zipCode",
+                            "city",
+                            "country"
+                        ]
+                    }
+                },
+                "required": [
+                    "personId",
+                    "firstName",
+                    "lastName",
+                    "email"
+                ],
+                "x-examples": {
+                    "example-1": {
+                        "personId": 1,
+                        "firstName": "Viva",
+                        "lastName": "Klein",
+                        "email": "VivaKlein@mailit.net",
+                        "avatar": "https://cdn.fakercloud.com/avatars/travishines_128.jpg",
+                        "address": {
+                            "streetAddress": "98604 Hermann Expressway",
+                            "zipCode": "86521-6451",
+                            "city": "South Madalynfort",
+                            "country": "Barbados"
+                        }
+                    }
+                },
+                "description": "",
+                "title": ""
+            }
+        },
+        "securitySchemes": {}
+    }
+}
