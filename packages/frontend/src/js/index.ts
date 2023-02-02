@@ -1,4 +1,4 @@
-import { Api, Persons } from '../.oas/api.js';
+import { Api, persons as Persons } from '../.oas/api.js';
 
 const api = new Api();
 
