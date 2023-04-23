@@ -1,3 +1,5 @@
+const { describe, it } = require('node:test');
+
 const { expect, assert } = require ('chai');
 
 const dbfaker = require('../../lib/main');

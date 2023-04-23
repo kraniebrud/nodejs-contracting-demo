@@ -1,4 +1,3 @@
-const persons = require('./data/persons');
 const _persons = require('./data/persons');
 
 const createdPersons = [];
@@ -12,7 +11,7 @@ module.exports = {
   },
   get getPersonById() {
     const { getAll } = this;
-    return (personId) => {
+    return (/** @type {Number} */personId) => {
       const person = getAll().find((f) => f.personId === Number(personId));
       return person ? { ...person } : undefined;
     };

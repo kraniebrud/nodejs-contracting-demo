@@ -1,10 +1,10 @@
-const faker = require('faker');
+const { faker } = require('@faker-js/faker');
 
 const getFakeAvatarUrl = (personId) => {
   return `https://robohash.org/${personId}`;
 }
 
-const maybeUndefined = (input) => {
+const maybeUndefined = (/** @type {*} */ input) => {
   const asUndefined = Math.round(Math.random() * 1) === 1;
   if (asUndefined) {
     return undefined
