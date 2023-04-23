@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const { OPTIONS_FILE_JS } = require('../../../opts/locations');
 const defaultOptions = require('../../../opts/defaults/options');

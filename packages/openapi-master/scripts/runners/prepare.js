@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('node:fs');
 
 const { OAS_DIR, OAS_FILE_JSON } = require('../../opts/locations');
 const createDefaultOptions = require('./partials/createOptionsFile');

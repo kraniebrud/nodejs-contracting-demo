@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "18"
+    "node": "20"
   },
   "scripts": {
-    "isCompatibleNode": "node ./isCompatibleNodeVersion",
-    "preinstall": "node ./isCompatibleNodeVersion",
+    "asdjkashdaskdh": "node ./isCompatibleNodeVersion --nvmrc $(cat .nvmrc)",
+    "isCompatibleNode": "echo 'hello'",
+    "preinstall": "npm run isCompatibleNode",
     "test": "npm run isCompatibleNode && npm test --workspaces --if-present",
     "build": "npm run isCompatibleNode && npm run build --workspaces --if-present",
     "start:be": "npm start --workspace=@ncd/backend",

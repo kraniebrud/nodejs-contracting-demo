@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 const { specJson } = require('@ncd/openapi-master');
 const oas2types = require("openapi-typescript").default;
