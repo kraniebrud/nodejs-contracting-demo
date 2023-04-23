@@ -17,7 +17,7 @@ describe('/persons/:personId<integer>', () => {
   it('[400] GET "/persons/x" - "x" is not a integer', async () => {
     const res = await chai.request(start).get('/persons/x');
     expect(res.status).to.eql(400);
-    expect(res.body.message).to.eql('request.params.personId should be integer');
+    expect(res.body.message).to.eql('request/params/personId must be integer');
   });
 });
 

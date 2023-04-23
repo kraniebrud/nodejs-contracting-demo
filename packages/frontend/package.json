@@ -5,7 +5,7 @@
   "type": "commonjs",
   "scripts": {
     "clean": "rm -rf ./dist",
-    "oas2api": "node ./oas2api.js",
+    "oas2api": "node ./oas2api",
     "build:html": "cp -r ./src/html ./dist",
     "build:js": "tsc -p tsconfig.json",
     "build": "npm run clean && npm run oas2api && npm run build:js && npm run build:html",
