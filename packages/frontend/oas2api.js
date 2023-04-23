@@ -1,5 +1,5 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 const { specJson } = require('@ncd/openapi-master');
 const { generateApi } = require('swagger-typescript-api');
@@ -18,6 +18,7 @@ const OUTDIR = path.resolve(__dirname, 'src', '.oas');
       generateClient: true,
       generateResponses: true,
       generateRouteTypes: true,
+      silent: true
     })
   }
   catch (err) {
