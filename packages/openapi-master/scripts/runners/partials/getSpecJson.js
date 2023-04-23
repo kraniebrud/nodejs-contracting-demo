@@ -1,4 +1,4 @@
-const https = require('https');
+const https = require('node:https');
 
 const { OPTIONS_FILE_JS } = require('../../../opts/locations');
 const defaultOptions = require('../../../opts/defaults/options');
